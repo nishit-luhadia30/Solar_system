@@ -1,16 +1,21 @@
 import './App.css'
 import eco from './images/eco.png';
 import ecoImage from './assets/Group (1).png';
-import planet1 from './assets/Layer 2 (1).png';
+import planet1 from './images/Layer 2 (1).png';
 import planet2 from './assets/Layer 2 (2).png';
-import planet3 from './assets/Layer 2 (3).png';
+import planet3 from './images/Layer 2 (3).png';
 import planet4 from './assets/Layer 2 (4).png';
 import planet5 from './assets/Layer 2 (5).png';
 import planet6 from './assets/Layer 2 (6).png';
+import planet7 from './assets/Layer 2.png';
 import sun from './images/sun.png';
 import symbol1 from './images/donut_large.png';
 import symbol2 from './images/Group 3.png';
 import sp1 from './images/Group 4.png';
+import sp1sm from './images/sp1sm.png';
+import sp2sm from './images/sp2sm.png';
+import sp3sm from './images/sp3sm.png';
+import sp4sm from './images/sp4sm.png';
 import symbol3 from './images/Group_green.png';
 import sp2 from './images/sp2.png';
 import sp3 from './images/sp3.png';
@@ -34,6 +39,13 @@ function App() {
     setIsNavOpen(!isNavOpen);
   };
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <>
     <header className='flex justify-between items-center text-white p-5 shadow-md'>
@@ -48,9 +60,10 @@ function App() {
           </svg>
         </button>
       </div>
-      <nav className={`absolute top-16 left-48 right-0 text-right bg-sky-950 lg:bg-transparent text-lg md:static md:flex md:justify-center ${isNavOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
+      <nav className={`absolute top-16 left-48 right-0 text-right bg-[#0a1931] lg:bg-transparent text-lg md:static md:flex md:justify-center ${isNavOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
         {['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'].map((planet) => (
-          <a key={planet} className='block md:inline-block duration-300 ease-in p-2 hover:bg-gray-700 rounded' href={`#${planet.toLowerCase()}`}>
+          <a key={planet} className='block md:inline-block duration-300 ease-in p-4 hover:bg-gray-700 rounded' href={`#${planet.toLowerCase()}`}
+            onClick={() => scrollToSection(`#${planet.toLowerCase()}`)}>
             {planet}
           </a>
         ))}
@@ -64,22 +77,23 @@ function App() {
       <section className='planet'>
         <div className='text-white text-center mt-24 p-4 md:mt-12 md:p-8'>
           <h1 className='text-4xl md:text-8xl font-semibold'>Let's get to know<br /> our solar system<br /> galaxy.</h1>
+          <img className='absolute opacity-50 max-sm:w-24 max-sm:right-5 lg:right-96' src={planet7} alt="" />
           <p className='text-base md:text-lg p-4'>Embark on a cosmic journey across the ethereal expanse of the solar system Galaxy and follow the orchestration of the <br /> cosmos and the planets weaving stories of their timeless existence.</p>
           <button className='text-lg md:text-2xl bg-gradient-to-br from-blue-500 to-red-500 p-2 md:p-4 rounded-md'><a href="#sun">Learn More &darr;</a></button>
-          <img className='absolute top-20 -z-10 hidden md:block' src={ecoImage} alt="" />
-          <img className='absolute top-10 right-0 -z-10 h-40 md:h-80 opacity-70' src={planet1} alt="" />
-          <img className='absolute top-96 right-0 h-20 md:h-40 opacity-70' src={planet2} alt="" />
-          <img className='absolute top-72 -z-10 h-20 md:h-40' src={planet3} alt="" />
-          <img className='absolute left-2/3 top-12 opacity-75 -z-10 h-20 md:h-40' src={planet4} alt="" />
-          <img className='absolute -bottom-24 -z-10 left-1/2 h-20 md:h-40 opacity-50' src={planet5} alt="" />
+          <img className='absolute -left-6 opacity-75 top-20 -z-10 hidden md:block' src={ecoImage} alt="" />
+          <img className='absolute top-10 right-0 -z-10 h-40 md:h-96 opacity-70' src={planet1} alt="" />
+          <img className='absolute max-sm:hidden -bottom-24 right-0 h-20 md:h-64 opacity-70' src={planet2} alt="" />
+          <img className='absolute left-0 top-80 opacity-75 -z-10 h-28 md:h-80' src={planet3} alt="" />
+          <img className='relative right-10 top-12 opacity-75 -z-10 h-20 md:h-40' src={planet4} alt="" />
+          <img className='absolute bottom-40 lg:-bottom-24 -z-10 left-1/2 h-20 md:h-40 opacity-50' src={planet5} alt="" />
           <img className='absolute top-36 -z-10 left-1/3 h-20 md:h-40 opacity-50' src={planet6} alt="" />
-          <div className='h-12 md:h-52'></div>
+          
         </div>
       </section>
 
       <section className='sun ml-4 md:ml-24' id='sun'>
-        <img className='relative right-10 w-40 md:w-auto' src={sun} alt="" />
-        <h1 className='text-white mt-10 text-4xl md:text-8xl font-bold font-serif'>.SUN</h1>
+        <img className='relative max-sm:top-16 top-4 w-80 md:w-auto' src={sun} alt="" />
+        <h1 className='text-white mt-10 text-4xl max-sm:mt-20 md:text-8xl font-bold font-serif'>.SUN</h1>
         <p className='text-white p-5 md:w-[50%]'>The Sun is a huge, glowing ball of hot plasma at the centre of our solar system and provides the vital energy needed for life on Earth. This energy radiates outward in the form of light and heat, providing warmth and light to the entire solar system.</p>
         <div>
           <div className='text-white flex flex-wrap md:flex-nowrap'>
@@ -107,9 +121,12 @@ function App() {
         </div>
       </section>
 
-      <section className='mercury duration-300 ease-in border-t-2 shadow-white shadow-md border-[#2f0a34]' id='mercury'>
+        {/* */}
+
+      <section className='mercury duration-300 ease-in ' id='mercury'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
-          <img className='mb-10 relative lg:right-20 w-40 md:w-auto' src={sp1} alt="" />
+          <img className='mb-10 relative max-sm:hidden lg:right-20 w-40 md:w-auto' src={sp1} alt="" />
+          
           <div className='p-4'>
             <h1 className='text-4xl md:text-8xl font-serif font-bold'>1. Mercury</h1>
             <p className='p-3 mb-4'>Mercury is the closest planet to the Sun and is known for its extreme temperatures and barren<br />, rocky surface. It is one of the four terrestrial planets in our solar system, characterized by their<br /> solid, rocky composition.</p>
@@ -136,13 +153,14 @@ function App() {
               </div>
             </div>
           </div>
+          <img className='max-sm:h-52 sm:hidden' src={sp1sm} alt="" />
         </div>
-        <div className='flex justify-center'>
+        {/* <div className='flex justify-center'>
           <a href="#venus"><img  className='w-10 h-10' src={downarrow} alt="" /></a>
-        </div>
+        </div> */}
       </section>
 
-      <section className='venus duration-300 ease-in border-t-2 shadow-white shadow-md border-[#2f0a34]' id='venus'>
+      <section className='venus duration-300 ease-in' id='venus'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
           
           <div className='p-4'>
@@ -171,14 +189,15 @@ function App() {
               </div>
             </div>
           </div>
-          <img className='mb-10 w-40 md:w-auto' src={sp2} alt="" />
+          <img className='mb-10 w-40 md:w-auto relative left-0 max-sm:hidden' src={sp2} alt="" />
+          <img className='sm:hidden h-52' src={sp2sm} alt="" />
         </div>
-        <div className='flex justify-center'>
+        {/* <div className='flex justify-center'>
           <a href="#earth"><img  className='w-10 h-10' src={downarrow} alt="" /></a>
-        </div>
+        </div> */}
       </section>
 
-      <section className='earth duration-300 ease-in border-t-2 shadow-white shadow-md border-[#2f0a34]' id='earth'>
+      <section className='earth duration-300 ease-in' id='earth'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>      
           <div className='p-4 flex justify-between'>
             <div>
@@ -196,6 +215,16 @@ function App() {
                   <h1 className='text-2xl md:text-3xl font-bold font-mono'>Miles</h1>
                 </div>
               </div>
+              <div className='sm:hidden p-6 px-8 h-fit border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex '>
+                <div>
+                  <img src={symbol2} alt="" />
+                </div>
+                <div className='ml-3'>
+                  <h4>Temperature</h4>
+                  <h1 className='text-2xl md:text-3xl font-bold font-mono'>30&deg;C</h1>
+                  <h1 className='text-2xl md:text-3xl font-bold font-mono'>Celsius</h1>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -204,15 +233,16 @@ function App() {
           <h1 className='text-4xl md:text-6xl font-serif font-bold'>Moon Planet</h1>
           <p className=''>Earth has one natural satellite, the Moon, which plays a role in stabilizing the planet's <br></br> rotation and tides. The Moon's gravitational pull causes ocean tides to rise and fall.</p>
         </div>
-        <img className='mb-10 w-56 md:w-auto lg:ml-36' src={sp3} alt="" />
-        <div className='flex justify-center'>
+        <img className='max-sm:hidden mb-10 w-56 md:w-auto lg:ml-36' src={sp3} alt="" />
+        <img className='sm:hidden h-52 relative left-14 mt-7' src={sp3sm} alt="" />
+        {/* <div className='flex justify-center'>
           <a href="#mars"><img className='w-10 h-10' src={downarrow} alt="" /></a>
-        </div>
+        </div> */}
       </section>
 
-      <section className='mars duration-300 ease-in border-t-2 shadow-white shadow-md border-[#2f0a34]' id='mars'>
+      <section className='mars duration-300 ease-in' id='mars'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
-          <img className='mb-10 w-40 md:w-auto relative lg:right-20' src={sp4} alt="" />
+          <img className='max-sm:hidden mb-10 w-40 md:w-auto relative lg:right-20' src={sp4} alt="" />
           <div className='p-4'>
             <h1 className='text-4xl md:text-8xl font-serif font-bold'>4. Mars</h1>
             <p className='p-3 mb-4'>Mars, often referred to as the "Red Planet" due to its reddish appearance, is the fourth planet<br /> from the Sun. It has the tallest volcano and the deepest, longest canyon in the solar system.</p>
@@ -239,13 +269,14 @@ function App() {
               </div>
             </div>
           </div>
+          <img className='sm:hidden h-52' src={sp4sm} alt="" />
         </div>
-        <div className='flex justify-center'>
+        {/* <div className='flex justify-center'>
           <a href="#jupiter"><img  className='w-10 h-10' src={downarrow} alt="" /></a>
-        </div>
+        </div> */}
       </section>
 
-      <section className='jupiter duration-300 ease-in border-t-2 shadow-white shadow-md border-[#2f0a34]' id='jupiter'>
+      <section className='jupiter duration-300 ease-in' id='jupiter'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
     
           <div className='p-4'>
@@ -274,16 +305,16 @@ function App() {
               </div>
             </div>
           </div>
-          <img className='mb-10 w-40 md:w-auto' src={sp5} alt="" />
+          <img className='mb-10 w-40 md:w-auto relative left-6' src={sp5} alt="" />
         </div>
-        <div className='flex justify-center'>
+        {/* <div className='flex justify-center'>
           <a href="#saturn"><img className='w-10 h-10' src={downarrow} alt="" /></a>
-        </div>
+        </div> */}
       </section>
 
-      <section className='saturn duration-300 ease-in border-t-2 shadow-white shadow-md border-[#2f0a34]' id='saturn'>
+      <section className='saturn duration-300 ease-in' id='saturn'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
-          <img className='mb-10 w-40 md:w-auto' src={sp6} alt="" />
+          <img className='mb-10 w-40 md:w-6/12 relative right-10' src={sp6} alt="" />
           <div className='p-4'>
             <h1 className='text-4xl md:text-8xl font-serif font-bold'>6. Saturn</h1>
             <p className='p-3 mb-4'>Saturn is the sixth planet from the Sun and is best known for its prominent ring system,<br /> composed of ice and rock particles. It has at least 62 moons, with Titan being the largest.</p>
@@ -311,12 +342,12 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='flex justify-center'>
+        {/* <div className='flex justify-center'>
           <a href="#uranus"><img className='w-10 h-10' src={downarrow} alt="" /></a>
-        </div>
+        </div> */}
       </section>
 
-      <section className='uranus duration-300 ease-in border-t-2 shadow-white shadow-md border-[#2f0a34]' id='uranus'>
+      <section className='uranus duration-300 ease-in' id='uranus'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
           
           <div className='p-4'>
@@ -347,12 +378,12 @@ function App() {
           </div>
           <img className='mb-10 w-40 md:w-auto' src={sp7} alt="" />
         </div>
-        <div className='flex justify-center'>
+        {/* <div className='flex justify-center'>
           <a href="#neptune"><img className='w-10 h-10' src={downarrow} alt="" /></a>
-        </div>
+        </div> */}
       </section>
 
-      <section className='neptune duration-300 ease-in border-t-2 shadow-white shadow-md border-[#2f0a34]' id='neptune'>
+      <section className='neptune duration-300 ease-in' id='neptune'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
           
           <div className='p-4'>
