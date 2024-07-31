@@ -16,6 +16,10 @@ import sp1sm from './images/sp1sm.png';
 import sp2sm from './images/sp2sm.png';
 import sp3sm from './images/sp3sm.png';
 import sp4sm from './images/sp4sm.png';
+import sp5sm from './images/sp5sm.png';
+import sp6sm from './images/sp6sm.png';
+import sp7sm from './images/sp7sm.png';
+import sp8sm from './images/sp8sm.png';
 import symbol3 from './images/Group_green.png';
 import sp2 from './images/sp2.png';
 import sp3 from './images/sp3.png';
@@ -30,6 +34,7 @@ import sp6 from './images/sp6.png';
 import sp7 from './images/sp7.png';
 import sp8 from './images/sp8.png';
 import star from './images/stars.png';
+import sunbig from './images/sunbig.png';
 
 
 function App() {
@@ -60,7 +65,7 @@ function App() {
           </svg>
         </button>
       </div>
-      <nav className={`absolute top-16 left-48 right-0 text-right bg-[#0a1931] lg:bg-transparent text-lg md:static md:flex md:justify-center ${isNavOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
+      <nav className={`absolute top-16 left-48 right-0 text-center rounded-lg bg-[#061021] lg:bg-transparent text-lg md:static md:flex md:justify-center ${isNavOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
         {['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'].map((planet) => (
           <a key={planet} className='block md:inline-block duration-300 ease-in p-4 hover:bg-gray-700 rounded' href={`#${planet.toLowerCase()}`}
             onClick={() => scrollToSection(`#${planet.toLowerCase()}`)}>
@@ -77,22 +82,23 @@ function App() {
       <section className='planet'>
         <div className='text-white text-center mt-24 p-4 md:mt-12 md:p-8'>
           <h1 className='text-4xl md:text-8xl font-semibold'>Let's get to know<br /> our solar system<br /> galaxy.</h1>
-          <img className='absolute opacity-50 max-sm:w-24 max-sm:right-5 lg:right-96' src={planet7} alt="" />
+          <img className='movement absolute opacity-50 sm:opacity-70 -z-10 max-sm:w-24 max-sm:right-5 lg:right-96' src={planet7} alt="" />
           <p className='text-base md:text-lg p-4'>Embark on a cosmic journey across the ethereal expanse of the solar system Galaxy and follow the orchestration of the <br /> cosmos and the planets weaving stories of their timeless existence.</p>
           <button className='text-lg md:text-2xl bg-gradient-to-br from-blue-500 to-red-500 p-2 md:p-4 rounded-md'><a href="#sun">Learn More &darr;</a></button>
-          <img className='absolute -left-6 opacity-75 top-20 -z-10 hidden md:block' src={ecoImage} alt="" />
-          <img className='absolute top-10 right-0 -z-10 h-40 md:h-96 opacity-70' src={planet1} alt="" />
-          <img className='absolute max-sm:hidden -bottom-24 right-0 h-20 md:h-64 opacity-70' src={planet2} alt="" />
-          <img className='absolute left-0 top-80 opacity-75 -z-10 h-28 md:h-80' src={planet3} alt="" />
-          <img className='relative right-10 top-12 opacity-75 -z-10 h-20 md:h-40' src={planet4} alt="" />
-          <img className='absolute bottom-40 lg:-bottom-24 -z-10 left-1/2 h-20 md:h-40 opacity-50' src={planet5} alt="" />
-          <img className='absolute top-36 -z-10 left-1/3 h-20 md:h-40 opacity-50' src={planet6} alt="" />
+          <img className='movement absolute -left-6 opacity-85 top-20 -z-10 hidden md:block' src={ecoImage} alt="" />
+          <img className='movement absolute top-10 right-0 -z-10 h-40 md:h-96 opacity-80' src={planet1} alt="" />
+          <img className='movement absolute max-sm:hidden -bottom-24 right-0 h-20 md:h-64 opacity-80' src={planet2} alt="" />
+          <img className='movement absolute left-0 top-80 opacity-75 -z-10 h-28 md:h-80' src={planet3} alt="" />
+          <img className='movement relative right-10 top-12 opacity-85 -z-10 h-20 md:h-40' src={planet4} alt="" />
+          <img className='movement absolute bottom-40 lg:-bottom-24 -z-10 left-1/2 h-20 md:h-40 opacity-80' src={planet5} alt="" />
+          <img className='movement absolute top-36 -z-10 left-1/3 h-20 md:h-40 opacity-70' src={planet6} alt="" />
           
         </div>
       </section>
 
       <section className='sun ml-4 md:ml-24' id='sun'>
-        <img className='relative max-sm:top-16 top-4 w-80 md:w-auto' src={sun} alt="" />
+        <img className='movement relative max-sm:top-16 top-4 w-80 md:w-auto max-sm:hidden' src={sun} alt="" />
+        
         <h1 className='text-white mt-10 text-4xl max-sm:mt-20 md:text-8xl font-bold font-serif'>.SUN</h1>
         <p className='text-white p-5 md:w-[50%]'>The Sun is a huge, glowing ball of hot plasma at the centre of our solar system and provides the vital energy needed for life on Earth. This energy radiates outward in the form of light and heat, providing warmth and light to the entire solar system.</p>
         <div>
@@ -107,7 +113,7 @@ function App() {
                 <h1 className='text-2xl md:text-3xl font-bold font-mono'>Miles</h1>
               </div>
             </div>
-            <div className='ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex justify-evenly'>
+            <div className='sm:ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex justify-evenly'>
               <div>
                 <img src={symbol2} alt="" />
               </div>
@@ -119,13 +125,14 @@ function App() {
             </div>
           </div>
         </div>
+        <img className='sm:hidden h-56 relative movement top-5' src={sunbig} alt="" />
       </section>
 
         {/* */}
 
       <section className='mercury duration-300 ease-in ' id='mercury'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
-          <img className='mb-10 relative max-sm:hidden lg:right-20 w-40 md:w-auto' src={sp1} alt="" />
+          <img className='movement mb-10 relative max-sm:hidden lg:right-20 w-40 md:w-auto' src={sp1} alt="" />
           
           <div className='p-4'>
             <h1 className='text-4xl md:text-8xl font-serif font-bold'>1. Mercury</h1>
@@ -141,7 +148,7 @@ function App() {
                   <h1 className='text-2xl md:text-3xl font-bold font-mono'>Miles</h1>
                 </div>
               </div>
-              <div className='ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
+              <div className='sm:ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
                 <div>
                   <img src={symbol2} alt="" />
                 </div>
@@ -153,7 +160,7 @@ function App() {
               </div>
             </div>
           </div>
-          <img className='max-sm:h-52 sm:hidden' src={sp1sm} alt="" />
+          <img className='max-sm:h-52 sm:hidden movement' src={sp1sm} alt="" />
         </div>
         {/* <div className='flex justify-center'>
           <a href="#venus"><img  className='w-10 h-10' src={downarrow} alt="" /></a>
@@ -177,7 +184,7 @@ function App() {
                   <h1 className='text-2xl md:text-3xl font-bold font-mono'>Miles</h1>
                 </div>
               </div>
-              <div className='ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
+              <div className='sm:ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
                 <div>
                   <img src={symbol2} alt="" />
                 </div>
@@ -189,8 +196,8 @@ function App() {
               </div>
             </div>
           </div>
-          <img className='mb-10 w-40 md:w-auto relative left-0 max-sm:hidden' src={sp2} alt="" />
-          <img className='sm:hidden h-52' src={sp2sm} alt="" />
+          <img className='mb-10 w-40 md:w-auto relative left-0 max-sm:hidden movement' src={sp2} alt="" />
+          <img className='sm:hidden h-52 movement' src={sp2sm} alt="" />
         </div>
         {/* <div className='flex justify-center'>
           <a href="#earth"><img  className='w-10 h-10' src={downarrow} alt="" /></a>
@@ -233,8 +240,8 @@ function App() {
           <h1 className='text-4xl md:text-6xl font-serif font-bold'>Moon Planet</h1>
           <p className=''>Earth has one natural satellite, the Moon, which plays a role in stabilizing the planet's <br></br> rotation and tides. The Moon's gravitational pull causes ocean tides to rise and fall.</p>
         </div>
-        <img className='max-sm:hidden mb-10 w-56 md:w-auto lg:ml-36' src={sp3} alt="" />
-        <img className='sm:hidden h-52 relative left-14 mt-7' src={sp3sm} alt="" />
+        <img className='max-sm:hidden mb-10 w-56 md:w-auto lg:ml-36 movement' src={sp3} alt="" />
+        <img className='sm:hidden h-52 relative left-14 mt-7 movement' src={sp3sm} alt="" />
         {/* <div className='flex justify-center'>
           <a href="#mars"><img className='w-10 h-10' src={downarrow} alt="" /></a>
         </div> */}
@@ -242,7 +249,7 @@ function App() {
 
       <section className='mars duration-300 ease-in' id='mars'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
-          <img className='max-sm:hidden mb-10 w-40 md:w-auto relative lg:right-20' src={sp4} alt="" />
+          <img className='max-sm:hidden mb-10 w-40 md:w-auto relative lg:right-20 movement' src={sp4} alt="" />
           <div className='p-4'>
             <h1 className='text-4xl md:text-8xl font-serif font-bold'>4. Mars</h1>
             <p className='p-3 mb-4'>Mars, often referred to as the "Red Planet" due to its reddish appearance, is the fourth planet<br /> from the Sun. It has the tallest volcano and the deepest, longest canyon in the solar system.</p>
@@ -257,7 +264,7 @@ function App() {
                   <h1 className='text-2xl md:text-3xl font-bold font-mono'>Miles</h1>
                 </div>
               </div>
-              <div className='ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
+              <div className='sm:ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
                 <div>
                   <img src={symbol2} alt="" />
                 </div>
@@ -269,7 +276,7 @@ function App() {
               </div>
             </div>
           </div>
-          <img className='sm:hidden h-52' src={sp4sm} alt="" />
+          <img className='sm:hidden h-52 movement' src={sp4sm} alt="" />
         </div>
         {/* <div className='flex justify-center'>
           <a href="#jupiter"><img  className='w-10 h-10' src={downarrow} alt="" /></a>
@@ -293,7 +300,7 @@ function App() {
                   <h1 className='text-2xl md:text-3xl font-bold font-mono'>Miles</h1>
                 </div>
               </div>
-              <div className='ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
+              <div className='sm:ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
                 <div>
                   <img src={symbol2} alt="" />
                 </div>
@@ -305,7 +312,8 @@ function App() {
               </div>
             </div>
           </div>
-          <img className='mb-10 w-40 md:w-auto relative left-6' src={sp5} alt="" />
+          <img className='mb-10 max-sm:hidden w-40 md:w-auto relative left-6 movement' src={sp5} alt="" />
+          <img className='sm:hidden h-72 movement' src={sp5sm} alt="" />
         </div>
         {/* <div className='flex justify-center'>
           <a href="#saturn"><img className='w-10 h-10' src={downarrow} alt="" /></a>
@@ -314,7 +322,7 @@ function App() {
 
       <section className='saturn duration-300 ease-in' id='saturn'>
         <div className='mt-10 flex flex-wrap justify-evenly text-white'>
-          <img className='mb-10 w-40 md:w-6/12 relative right-10' src={sp6} alt="" />
+          <img className='mb-10 w-40 md:w-6/12 max-sm:hidden relative right-10 movement' src={sp6} alt="" />
           <div className='p-4'>
             <h1 className='text-4xl md:text-8xl font-serif font-bold'>6. Saturn</h1>
             <p className='p-3 mb-4'>Saturn is the sixth planet from the Sun and is best known for its prominent ring system,<br /> composed of ice and rock particles. It has at least 62 moons, with Titan being the largest.</p>
@@ -329,7 +337,7 @@ function App() {
                   <h1 className='text-2xl md:text-3xl font-bold font-mono'>Miles</h1>
                 </div>
               </div>
-              <div className='ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
+              <div className='sm:ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
                 <div>
                   <img src={symbol2} alt="" />
                 </div>
@@ -341,6 +349,7 @@ function App() {
               </div>
             </div>
           </div>
+          <img className='sm:hidden h-56 movement' src={sp6sm} alt="" />
         </div>
         {/* <div className='flex justify-center'>
           <a href="#uranus"><img className='w-10 h-10' src={downarrow} alt="" /></a>
@@ -364,7 +373,7 @@ function App() {
                   <h1 className='text-2xl md:text-3xl font-bold font-mono'>Miles</h1>
                 </div>
               </div>
-              <div className='ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
+              <div className='sm:ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
                 <div>
                   <img src={symbol2} alt="" />
                 </div>
@@ -376,7 +385,8 @@ function App() {
               </div>
             </div>
           </div>
-          <img className='mb-10 w-40 md:w-auto' src={sp7} alt="" />
+          <img className='mb-10 w-40 md:w-auto max-sm:hidden movement' src={sp7} alt="" />
+          <img className='sm:hidden h-56 movement' src={sp7sm} alt="" />
         </div>
         {/* <div className='flex justify-center'>
           <a href="#neptune"><img className='w-10 h-10' src={downarrow} alt="" /></a>
@@ -400,7 +410,7 @@ function App() {
                   <h1 className='text-2xl md:text-3xl font-bold font-mono'>Miles</h1>
                 </div>
               </div>
-              <div className='ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
+              <div className='sm:ml-5 mb-5 p-5 px-11 border-[#4a1252] border-4 rounded-xl bg-gradient-to-tl from-[#3d0944] to-[#0f0932] flex'>
                 <div>
                   <img src={symbol2} alt="" />
                 </div>
@@ -412,7 +422,8 @@ function App() {
               </div>
             </div>
           </div>
-          <img className='mb-10 w-56 md:w-auto relative left-0 lg:relative lg:bottom-72' src={sp8} alt="" />
+          <img className='mb-10 w-56 md:w-auto relative left-0 lg:relative lg:bottom-72 max-sm:hidden movement' src={sp8} alt="" />
+          <img className='sm:hidden h-56 movement' src={sp8sm} alt="" />
         </div>
         {/* <div className='flex justify-center'>
           <a href="#mercury"><img className='w-10 h-10' src={downarrow} alt="" /></a>
